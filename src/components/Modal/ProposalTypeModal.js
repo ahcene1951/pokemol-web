@@ -11,11 +11,11 @@ import {
   Flex,
   Image,
   Box,
+  useTheme
 } from '@chakra-ui/core';
-import { useTheme } from '../../contexts/PokemolContext';
 
 const ProposalFormModal = ({ isOpen, setShowModal, setProposalType }) => {
-  const [theme] = useTheme();
+  const theme = useTheme();
 
   const proposalTypes = [
     {

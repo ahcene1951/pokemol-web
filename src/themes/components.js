@@ -1,9 +1,8 @@
 import React from 'react';
-import { Button } from '@chakra-ui/core';
-import { useTheme } from '../contexts/PokemolContext';
+import { Button, useTheme } from '@chakra-ui/core';
 
 export const PrimaryButton = ({ onClick, children, ...others }) => {
-  const [theme] = useTheme();
+  const theme = useTheme();
 
   return (
     <Button
@@ -28,7 +27,7 @@ export const PrimaryButton = ({ onClick, children, ...others }) => {
 };
 
 export const SecondaryButton = ({ onClick, children, ...others }) => {
-  const [theme] = useTheme();
+  const theme = useTheme();
 
   return (
     <Button

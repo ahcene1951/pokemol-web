@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Text, Flex, Icon, Spinner, Button } from '@chakra-ui/core';
+import { Text, Flex, Icon, Spinner, Button, useTheme } from '@chakra-ui/core';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
 import {
   useUser,
   useNetwork,
   useDao,
   useLoading,
-  useTheme,
 } from '../../contexts/PokemolContext';
 import { Web3SignIn } from './Web3SignIn';
 import UserAvatar from './UserAvatar';
@@ -18,7 +17,7 @@ const Header = () => {
   const [user] = useUser();
   const [network] = useNetwork();
   const [dao] = useDao();
-  const [theme] = useTheme();
+  const theme = useTheme();
   const [loading] = useLoading();
   const [pageTitle, setPageTitle] = useState();
   const [showDaoSwitcher, setShowDaoSwitcher] = useState(false);

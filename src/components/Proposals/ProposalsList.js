@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Text, Flex } from '@chakra-ui/core';
+import { Box, Text, Flex, useTheme } from '@chakra-ui/core';
 
-import { useTheme } from '../../contexts/PokemolContext';
 import ProposalCard from './ProposalCard';
 import { defaultProposals } from '../../utils/constants';
 
 const ProposalsList = ({ proposals }) => {
   const [filter] = useState(null);
-  const [theme] = useTheme();
+  const theme = useTheme();
   const [_proposals, setProposals] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 

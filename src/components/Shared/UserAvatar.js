@@ -1,12 +1,11 @@
 import React from 'react';
 import makeBlockie from 'ethereum-blockies-base64';
-import { Flex, Avatar, Text } from '@chakra-ui/core';
+import { Flex, Avatar, Text, useTheme } from '@chakra-ui/core';
 
-import { useTheme } from '../../contexts/PokemolContext';
 import { truncateAddr } from '../../utils/helpers';
 
 const UserAvatar = ({ user }) => {
-  const [theme] = useTheme();
+  const theme = useTheme();
 
   return (
     <Flex direction='row' alignItems='center'>

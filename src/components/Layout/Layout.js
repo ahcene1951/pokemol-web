@@ -1,14 +1,13 @@
 import React from 'react';
-import { Flex, Image, useDisclosure, Link, Box } from '@chakra-ui/core';
+import { Flex, Image, useDisclosure, Link, Box, useTheme } from '@chakra-ui/core';
 import { motion } from 'framer-motion';
 
 import Header from '../Shared/Header';
 import SideNav from '../Shared/SideNav';
-import { useTheme } from '../../contexts/PokemolContext';
 
 const Layout = ({ children }) => {
   const { isOpen, onToggle } = useDisclosure(false);
-  const [theme] = useTheme();
+  const theme = useTheme();
 
   const MotionBox = motion.custom(Box);
   const MotionFlex = motion.custom(Flex);

@@ -14,14 +14,15 @@ import {
   Spinner,
   Image,
   Icon,
+  useTheme,
 } from '@chakra-ui/core';
 import makeBlockie from 'ethereum-blockies-base64';
 
-import { useTheme, useUserDaos } from '../../contexts/PokemolContext';
+import { useUserDaos } from '../../contexts/PokemolContext';
 import BrandImg from '../../assets/Daohaus__Castle--Dark.svg';
 
 const DaoSwitcherModal = ({ isOpen, setShowModal }) => {
-  const [theme] = useTheme();
+  const theme = useTheme();
   const [userDaos] = useUserDaos();
 
   const renderDaoSelect = () => {

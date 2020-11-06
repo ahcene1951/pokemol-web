@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import makeBlockie from 'ethereum-blockies-base64';
-import { Avatar, AvatarBadge, Box, Flex, Link, Text } from '@chakra-ui/core';
-
-import { useTheme } from '../../contexts/PokemolContext';
+import { Avatar, AvatarBadge, Box, Flex, Link, Text, useTheme } from '@chakra-ui/core';
 
 const MemberDaoList = ({ daos }) => {
-  const [theme] = useTheme();
+  const theme = useTheme();
   const [visibleDaos, setVisibleDaos] = useState([]);
 
   useEffect(() => {

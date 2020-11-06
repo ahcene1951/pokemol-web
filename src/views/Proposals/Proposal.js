@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
-import { Box, Flex, Text, Link, Icon } from '@chakra-ui/core';
+import { Box, Flex, Text, Link, Icon, useTheme } from '@chakra-ui/core';
 
-import { useProposals, useDao, useTheme } from '../../contexts/PokemolContext';
+import { useProposals, useDao } from '../../contexts/PokemolContext';
 import ProposalDetail from '../../components/Proposals/ProposalDetail';
 import ProposalVote from '../../components/Proposals/ProposalVote';
 
@@ -12,7 +12,7 @@ const Proposal = () => {
   const id = location.pathname.split('/proposals/')[1];
   const [proposals] = useProposals();
   const [proposal, setProposal] = useState(null);
-  const [theme] = useTheme();
+  const theme = useTheme();
 
   useEffect(() => {
     if (proposals) {

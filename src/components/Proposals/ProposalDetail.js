@@ -1,15 +1,15 @@
 import React from 'react';
 import { formatDistanceToNow, isBefore } from 'date-fns';
-import { Flex, Box, Text, Icon, Link } from '@chakra-ui/core';
+import { Flex, Box, Text, Icon, Link, useTheme } from '@chakra-ui/core';
 import { utils } from 'web3';
 
-import { useTheme, useMembers } from '../../contexts/PokemolContext';
+import { useMembers } from '../../contexts/PokemolContext';
 import UserAvatar from '../../components/Shared/UserAvatar';
 import { memberProfile } from '../../utils/helpers';
 
 const ProposalDetail = ({ proposal }) => {
   const [members] = useMembers();
-  const [theme] = useTheme();
+  const theme = useTheme();
   const details = proposal.details && JSON.parse(proposal.details);
   const votePeriodEnds = new Date(+proposal.votingPeriodEnds * 1000);
   return (

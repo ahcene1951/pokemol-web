@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Flex, Text, Badge, Skeleton } from '@chakra-ui/core';
+import { Box, Flex, Text, Badge, Skeleton, useTheme } from '@chakra-ui/core';
 import { utils } from 'web3';
 import { formatDistanceToNow, isBefore } from 'date-fns';
 
-import { useDao, useTheme } from '../../contexts/PokemolContext';
+import { useDao } from '../../contexts/PokemolContext';
 
 const ProposalCard = ({ proposal, isLoaded }) => {
   const [dao] = useDao();
-  const [theme] = useTheme();
+  const theme = useTheme();
   let details = null;
   try {
     details =

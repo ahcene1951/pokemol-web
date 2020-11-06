@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Flex, Skeleton, Text } from '@chakra-ui/core';
+import { Box, Flex, Skeleton, Text, useTheme } from '@chakra-ui/core';
 import { format } from 'date-fns';
 
-import { useMembers, useTheme } from '../../contexts/PokemolContext';
+import { useMembers } from '../../contexts/PokemolContext';
 // import UserAvatar from '../Shared/UserAvatar';
 import { truncateAddr } from '../../utils/helpers';
 import { defaultMembers } from '../../utils/constants';
 
 const MembersList = () => {
-  const [theme] = useTheme();
+  const theme = useTheme();
   const filter = useState(null);
   const [members] = useMembers();
   const [_members, setMembers] = useState(null);

@@ -23,13 +23,12 @@ import {
   ModalOverlay,
   Text,
   Textarea,
+  useTheme,
 } from '@chakra-ui/core';
 import {
   useDao,
-  useTheme,
   useTxProcessor,
   useUser,
-  useWeb3Connect,
 } from '../../contexts/PokemolContext';
 import { PrimaryButton } from '../../themes/theme';
 import { utils } from 'web3';
@@ -37,7 +36,7 @@ import { utils } from 'web3';
 const ProposalFormModal = ({ isOpen, setShowModal }) => {
   const [loading, setLoading] = useState(false);
 
-  const [theme] = useTheme();
+  const theme = useTheme();
   const [user] = useUser();
   const [dao] = useDao();
   const [txProcessor, updateTxProcessor] = useTxProcessor();

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Text, Box, Flex, Image, Skeleton } from '@chakra-ui/core';
+import { Text, Box, Flex, Image, Skeleton, useTheme } from '@chakra-ui/core';
 import { utils } from 'web3';
 
-import { useTheme, useUser, useMembers } from '../../contexts/PokemolContext';
+import { useUser, useMembers } from '../../contexts/PokemolContext';
 import { PrimaryButton, SecondaryButton } from '../../themes/theme';
 
 const DaoOverviewDetails = ({ dao }) => {
-  const [theme] = useTheme();
+  const theme = useTheme();
   const [user] = useUser();
   const [members] = useMembers();
   const history = useHistory();

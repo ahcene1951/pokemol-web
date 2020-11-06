@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/core';
+import { ChakraProvider, useTheme } from '@chakra-ui/core';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
-import { useTheme } from './contexts/PokemolContext';
 import { resolvers } from './utils/apollo/resolvers';
 import Routes from './Routes';
 import Layout from './components/Layout/Layout';
@@ -38,7 +37,7 @@ function Init() {
 }
 
 const App = () => {
-  const [theme] = useTheme();
+  const theme = useTheme();
 
   return (
     <ApolloProvider client={client}>

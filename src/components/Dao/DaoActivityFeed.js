@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text } from '@chakra-ui/core';
+import { Text, useTheme } from '@chakra-ui/core';
 
-import { useTheme } from '../../contexts/PokemolContext';
 import ActivityFeedList from '../ActivityFeed/ActivityFeedList';
 
 const DaoActivityFeed = ({ dao }) => {
-  const [theme] = useTheme();
+  const theme = useTheme();
   // const [activities, setActivities] = useState([]);
   const proposalActivities = [
     {
