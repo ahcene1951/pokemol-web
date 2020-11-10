@@ -29,7 +29,7 @@ const defaultTheme = {
 };
 
 export const customTheme = (daoTheme) => {
-  console.log('returing customTheme');
+  console.log('returning customTheme');
   const themeOverrides = daoTheme || defaultTheme;
   return {
     ...theme,
